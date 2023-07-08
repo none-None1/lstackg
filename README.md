@@ -1,4 +1,4 @@
 
-The esoteric language &gt;stack&lt;
+The esoteric language &lt;stack&gt;
 
 [link](https://esolangs.org/wiki/LstackG)
