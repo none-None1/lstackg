@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>&lt;stack&gt; Playground</title>
+</head>
+<body>
+<h3>
+You can run &lt;stack&gt; code here directly online.
+</h3>
+<script src="lstackg.js"></script>
+<script>
+function foo(){
+    var code=document.getElementById("c0de").value;
+    var input=document.getElementById("1nput").value;
+    const s = new Date().getTime();
+    var output=lstackg(code,input);
+    const e = new Date().getTime();
+    document.getElementById("0utput").value=output;
+    document.getElementById("1og").value=`Execution time: ${e-s} ms`
+}
+</script>
+<textarea id="c0de" cols=80 rows=20>code</textarea>
+<textarea id="1nput" cols=80 rows=20>input</textarea>
+<textarea id="0utput" cols=80 rows=20 readonly>output</textarea>
+<textarea id="1og" cols=80 rows=20 readonly>log</textarea>
+<button type="button" onclick="foo()">Run</button>
+</body>
+</html>
