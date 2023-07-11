@@ -16,13 +16,30 @@ function foo(){
     var output=lstackg(code,input);
     const e = new Date().getTime();
     document.getElementById("0utput").value=output;
-    document.getElementById("1og").value=`Execution time: ${e-s} ms`
+    document.getElementById("1og").value=`Execution time: ${e-s} ms`;
 }
+function bar(){
+    document.getElementById("c0de").value='saaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac';
+    foo();
+}
+function upload(){
+    var ev=(window.event||event);
+    var file=ev.target.files[0];
+    var reader=new FileReader();
+    reader.onload = function(){
+        document.getElementById("c0de").value=reader.result;
+    }
+    reader.readAsText(file);
+}
+console.log('Hello World from the esolang <stack>!');
 </script>
 <textarea id="c0de" cols=80 rows=20>code</textarea>
 <textarea id="1nput" cols=80 rows=20>input</textarea>
 <textarea id="0utput" cols=80 rows=20 readonly>output</textarea>
 <textarea id="1og" cols=80 rows=20 readonly>log</textarea>
+<hr>
 <button type="button" onclick="foo()">Run</button>
+<button type="button" onclick="bar()">Hello World</button>
+<input type="file" onchange="upload()"></input>
 </body>
 </html>
